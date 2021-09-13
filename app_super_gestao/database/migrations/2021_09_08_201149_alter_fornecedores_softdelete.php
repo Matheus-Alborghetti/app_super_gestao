@@ -14,7 +14,7 @@ class AlterFornecedoresSoftdelete extends Migration
     public function up()
     {
         Schema::table('fornecedores', function (Blueprint $table) {
-            $table->string('uf', 2);
+            $table->softDeletes();
         });
     }
 
@@ -26,8 +26,7 @@ class AlterFornecedoresSoftdelete extends Migration
     public function down()
     {
         Schema::table('fornecedores', function (Blueprint $table) {
-            //para remover colunas
-            $table->dropColumn(['uf', 'email']);
+            $table->dropSoftDeletes();
         });
     }
 }
