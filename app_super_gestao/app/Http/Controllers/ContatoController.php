@@ -38,6 +38,5 @@ class ContatoController extends Controller
 
         SiteContato::create($request->all());
         return redirect()->route('site.index');
-
     }
 }
